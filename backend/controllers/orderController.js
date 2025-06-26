@@ -65,7 +65,7 @@ const placeOrderStripe = async (req, res) => {
         product_data: {
           name: "Delivery Charges",
         },
-        unit_amount: delivery_charge,
+        unit_amount: delivery_charge * 100,
       },
       quantity: 1,
     });
@@ -83,12 +83,7 @@ const placeOrderStripe = async (req, res) => {
   }
 };
 
-const placeOrderRazorpay = async (req, res) => {
-//   try {
-//   } catch (error) {
-//     next(error);
-//   }
-}
+
 
 const getAllOrders = async (req, res) => {
   try {
@@ -153,7 +148,6 @@ const verifyStripePayment = async (req, res) => {
 export {
   placeOrder,
   placeOrderStripe,
-  placeOrderRazorpay,
   getAllOrders,
   userOrders,
   updateOrderStatus,
