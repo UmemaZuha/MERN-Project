@@ -5,7 +5,6 @@ import authUser from "../middleware/auth.js";
 import {
   getAllOrders,
   placeOrder,
-  placeOrderRazorpay,
   placeOrderStripe,
   updateOrderStatus,
   userOrders,
@@ -20,7 +19,7 @@ orderRouter.post("/status", adminAuth, updateOrderStatus);
 // payment feature
 orderRouter.post("/place", authUser, placeOrder);
 orderRouter.post("/stripe", authUser, placeOrderStripe);
-orderRouter.post("/razorpay", authUser, placeOrderRazorpay);
+
 
 // user
 orderRouter.post("/user-orders", authUser, userOrders);
